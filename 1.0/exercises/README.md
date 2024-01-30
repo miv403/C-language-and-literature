@@ -7,6 +7,8 @@ tags:
 
 # exercises 3
 
+this folder is all about exercises and their solutions. some questions may have their solutions under it. others are in `*.c` files.
+
 ## 3.17 (Credit-Limit Calculator)
 
 Develop a C program that will determine whether a
