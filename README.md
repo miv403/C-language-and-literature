@@ -2,4 +2,4 @@
 
 ## TODO
 
-- [ ] chapter 3, p.86
+- [x] chapter 3, p.86
