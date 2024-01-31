@@ -1,4 +1,4 @@
-// deitel c2.2
+// c2.2
 #include <stdio.h>
 
 int main(void){
