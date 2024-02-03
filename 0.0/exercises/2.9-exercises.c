@@ -9,4 +9,3 @@ int main(void)
     printf("%s","the product is ");
     printf("%d\n", a);
 }
-

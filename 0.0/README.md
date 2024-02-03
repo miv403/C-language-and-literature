@@ -4,7 +4,13 @@ this directory contains my notes.
 
 ## summary
 
-### printf
+### compiling
+
+```console
+gcc -std=c18 0.0-helloWorld.c -o 0.0-helloWorld-0
+```
+
+### printf()
 
 #### escape characters
 
@@ -55,6 +61,16 @@ this directory contains my notes.
 | a A  (C99)           | floating-point number to hexadecimal exponent |
 | p                    | pointer                                       |
 
+### scanf()
+
+```C
+int foo;
+scanf("%d", &foo);
+//          ^ 
+```
+
+the `&` is an **address operator**.
+
 ### some operators in C
 
 #### arithmetical
@@ -80,26 +96,25 @@ this directory contains my notes.
 
 just use `puts()` when you need `printf("\n")`
 
-`printf("merhaba\n");`
+- `printf("merhaba\n"); // instead`
 
-```console
- > merhaba
- > 
-```
+    ```console
+    $ ./a.out
+    > merhaba
+    >  
+    ```
 
-```C
-puts("merhaba");
-    //use this
-```
+- `puts("merhaba"); // use this`
 
-```console
- > merhaba
- >
-```
+    ```console
+    $ ./a.out
+    > merhaba
+    >  
+    ```
 
-`printf("merhaba ");`
+- `printf("merhaba "); // instead`
 
-```C
-printf("%s", "merhaba ");
-    //use this
-```
+    ```C
+    printf("%s", "merhaba ");
+        //use this
+    ```
