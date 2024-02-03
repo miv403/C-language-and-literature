@@ -1,6 +1,8 @@
 #include <stdio.h>
 //e
 
+// i have used this file for testing questions of exercise 4.3
+
 // a.
 
 int main(void){
