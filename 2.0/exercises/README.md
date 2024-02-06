@@ -267,3 +267,81 @@ tags:
   ```C
   for (int k = 19; k <= 51; k += 8)
   ```
+
+## 4.9 (Sum a Sequence of Integers)
+
+Write a program that sums a sequence of integers.
+Assume that the first integer read with scanf specifies the number of
+values remaining
+to be entered. Your program should read only one value each time scanf
+executes.
+A typical input sequence might be
+
+```console
+> 5 100 200 300 400 500
+```
+
+where the `5` indicates that the next five values are to be summed.
+
+## 4.10 (Average a Sequence of Integers)
+
+Write a program that calculates and prints the average of several
+integers. Assume the last value read with scanf is the sentinel 9999.
+A typical input sequence might be
+
+```console
+> 10 8 11 7 9 9999
+```
+
+indicating that the average of all the values preceding 9999 is to be calculated.
+
+## 4.11 (Find the Smallest)
+
+Write a program that finds the smallest of several integers.
+Assume that the first value read specifies the number of values remaining.
+
+## 4.12 (Calculating the Sum of Even Integers)
+
+Write a program that calculates and
+prints the sum of the even integers from 2 to 30.
+
+## 4.13 (Calculating the Product of Odd Integers)
+
+Write a program that calculates and
+prints the product of the odd integers from 1 to 15.
+
+## 4.14 (Factorials)
+
+The factorial function is used frequently in probability problems.
+The factorial of a positive integer n (written n! and pronounced “n factorial”) is equal
+to the product of the positive integers from 1 to n. Write a program that evaluates the
+factorials of the integers from 1 to 5. Print the results in tabular format.
+What difficulty might prevent you from calculating the factorial of 20?
+
+## 4.15 (Modified Compound-Interest Program)
+
+Modify the compound-interest program of Section 4.5
+to repeat its steps for interest rates of 5%, 6%, 7%, 8%, 9%, and
+10%. Use a for loop to vary the interest rate.
+
+## 4.16 (Triangle-Printing Program)
+
+Write a program that prints the following patterns separately,
+one below the other. Use for loops to generate the patterns.
+All asterisks (*) should be printed by a single printf statement of
+the form printf("%s","*"); (this causes the asterisks to print side-by-side).
+[Hint: The last two patterns require that each line begin with an
+appropriate number of blanks.]
+
+```text
+(A)           (B)          (C)        (D)
+*             **********   **********           *
+**            *********     *********          **
+***           ********       ********         ***
+****          *******         *******        ****
+*****         ******           ******       *****
+******        *****             *****      ******
+*******       ****               ****     *******
+********      ***                 ***    ********
+*********     **                   **   *********
+**********    *                     *  **********
