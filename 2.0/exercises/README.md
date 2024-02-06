@@ -329,8 +329,8 @@ to repeat its steps for interest rates of 5%, 6%, 7%, 8%, 9%, and
 Write a program that prints the following patterns separately,
 one below the other. Use for loops to generate the patterns.
 All asterisks (*) should be printed by a single printf statement of
-the form printf("%s","*"); (this causes the asterisks to print side-by-side).
-[Hint: The last two patterns require that each line begin with an
+the form `printf("%s","\*");` (this causes the asterisks to print side-by-side).
+[*Hint:* The last two patterns require that each line begin with an
 appropriate number of blanks.]
 
 ```text
@@ -345,3 +345,46 @@ appropriate number of blanks.]
 ********      ***                 ***    ********
 *********     **                   **   *********
 **********    *                     *  **********
+```
+
+## 4.17 (Calculating Credit Limits)
+
+Collecting money becomes increasingly difficult during periods of recession, so companies may tighten their credit limits to prevent their accounts receivable (money owed to them) from becoming too large. In response to a prolonged recession, one company has cut its customers’ credit limits in half. Thus, if a particular customer had a credit limit of $2000, it’s now $1000. If a customer had a credit limit of $5000, it’s now $2500. Write a program that analyzes the credit status of three customers of this company. For each customer you’re given:
+
+1. The customer’s account number.
+2. The customer’s credit limit before the recession.
+3. The customer’s current balance (i.e., the amount the customer owes).
+
+Your program should calculate and print the new credit limit for
+each customer and determine (and print) which customers have
+balances that exceed their new credit limits.
+
+## 4.18 (Bar-Chart Printing Program)
+
+One interesting application of computers is
+drawing graphs and bar charts. Write a program that reads five numbers (each be-
+tween 1 and 30). For each number read, your program should print a line containing
+that number of adjacent asterisks. For example, if your program reads the number
+seven, it should print `*******`.
+
+## 4.19 (Calculating Sales)
+
+An online retailer sells five different products whose retail
+prices are shown in the following table:
+
+| Product Number | Retail Price |
+| -------------- | ------------ |
+| 1              | $2.98        |
+| 2              | $4.50        |
+| 3              | $9.98        |
+| 4              | $4.49        |
+| 5              | $6.87        |
+
+Write a program that reads a series of pairs of numbers as follows:
+
+1. Product number.
+2. Quantity sold for one day.
+
+Your program should use a switch statement to help determine the retail price for
+each product. Your program should calculate and display the total retail value of all
+products sold last week.

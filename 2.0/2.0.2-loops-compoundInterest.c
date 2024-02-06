@@ -7,7 +7,7 @@
 // n is the number of years, which is 10 here, and
 // a is the amount on deposit at the end of the nth year.
 
-// COMPILATION: gcc -lm 1.0.2-loops.c 
+// COMPILATION: gcc 2.0.2-loops-compundInterest.c -lm
 
 // fig04_04.c
 // Calculating compound interest.
