@@ -503,3 +503,51 @@ If you’re not familiar with these number systems, read online
 Appendix E before you attempt this exercise.
 [*Note:* You can display an integer as an octal or hexadecimal value
 with the conversion specifications %o and %X, respectively.]
+
+## 4.26 (Calculating the Value of π)
+
+Calculate the value of π from the infinite series
+
+$$
+\pi = 4 - \frac{4}{3} + \frac{4}{5} - \frac{4}{7} + \frac{4}{9} - \frac{4}{11} + \dots
+$$
+
+Print a table that shows the value of π approximated by one term of this series, by
+two terms, by three terms, and so on. How many terms of this series do you have to
+use before you first get 3.14? 3.141? 3.1415? 3.14159?
+
+## 4.27 (Pythagorean Triples)
+
+A right triangle can have sides that are all integers. The
+set of three integer values for a right triangle’s sides is a Pythagorean triple. These three
+sides must satisfy the relationship that the sum of the sides’ squares is equal to the hy-
+potenuse’s square. Find all Pythagorean triples for side1, side2, and the hypotenuse, all
+no larger than 500. Use a triple-nested for loop that tries all possibilities. This is an
+example of *“brute-force”* computing. It’s not aesthetically pleasing to many people.
+But there are many reasons why this technique is important. First, with computing
+power increasing at such a phenomenal pace, solutions that would have taken years or
+even centuries of computer time to produce with the technology of just a few years ago
+can now be produced in hours, minutes, seconds or even less. Second, there are large
+numbers of interesting problems for which there’s no known algorithmic approach
+other than sheer brute force. We investigate many problem-solving methodologies in
+this book. We’ll consider brute-force approaches to various interesting problems.
+
+## 4.28 (Calculating Weekly Pay)
+
+A company pays its employees as managers
+(who receive a fixed weekly salary), hourly workers
+(who receive a fixed hourly wage for up to the first 40 hours they work and
+“time-and-a-half” for overtime hours worked), commission workers
+(who receive $250 plus 5.7% of their gross weekly sales),
+or piece-workers (who receive a fixed amount of money for each of the items
+they produce—eachpieceworker in this company works on only one type of item).
+Write a program to compute each employee’s weekly pay. You do not
+know the number of employees in advance.
+
+Each type of employee has a pay code: Managers have paycode 1, hourly
+workers have code 2, commission workers have code 3 and pieceworkers have code 4.
+Use a `switch` to compute each employee’s pay based on the paycode. Within the
+switch, prompt the user to enter the appropriate facts your program needs to calculate each employee’s pay based on that employee’s paycode.
+
+[*Note:* You can input values of
+type `double` using the conversion specification `%lf` with `scanf`.]
