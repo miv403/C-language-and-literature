@@ -388,3 +388,118 @@ Write a program that reads a series of pairs of numbers as follows:
 Your program should use a switch statement to help determine the retail price for
 each product. Your program should calculate and display the total retail value of all
 products sold last week.
+
+## 4.21
+
+Rewrite the program of *Fig. 4.2* to define and initialize the variable counter be-
+fore the for statement, then output the value of counter after the loop terminates.
+
+- **fig 4.2**
+
+  ```C
+  // fig04_02.c
+  // Counter-controlled iteration with the for statement.
+  #include <stdio.h>
+  int main(void) {
+    // initialization, iteration condition, and increment
+    // are all included in the for statement header.
+    for (int counter = 1; counter <= 5; ++counter) {
+      printf("%d ", counter);
+    }
+    puts(""); // outputs a newline
+  }
+  ```
+
+- **new output:**
+
+  ```console
+  $ ./a.out 
+  1 2 3 4 5 
+  6
+  ```
+
+## 4.22 (Average Grade)
+
+Modify the program of *Fig. 4.5* so that it calculates the average
+grade for the class.
+
+## 4.23 (Calculating the Compound Interest with Integers)
+
+Modify the program of *Fig. 4.4* so that it uses only integers to calculate the compound interest.
+[Hint: Treat all monetary amounts as integral numbers of pennies.
+Then “break” the result into its
+dollar portion and cents portion by using the division and remainder
+operations, respectively. Insert a period.]
+
+## 4.24
+
+Assume `i = 1`, `j = 2`, `k = 3` and `m = 2`. What does each statement print?
+
+1. `printf("%d", i == 1);`
+
+    ```console
+      > 1
+    ```
+
+2. `printf("%d", j == 3);`
+
+    ```console
+      > 0
+    ```
+
+3. `printf("%d", i >= 1 && j < 4);`
+
+    ```console
+      > 1
+    ```
+
+4. `printf("%d", m <= 99 && k < m);`
+
+    ```console
+      > 0
+    ```
+
+5. `printf("%d", j >= i || k == m);`
+
+    ```console
+      > 1
+    ```
+
+6. `printf("%d", k + m < j || 3 - j >= k);`
+
+    ```console
+      > 0
+    ```
+
+7. `printf("%d", !m);`
+
+    ```console
+      > 0
+    ```
+
+8. `printf("%d", !(j - m));`
+
+    ```console
+      > 1
+    ```
+
+9. `printf("%d", !(k > m));`
+
+    ```console
+      > 0
+    ```
+
+10. `printf("%d", !(j > k));`
+
+    ```console
+      > 1
+    ```
+
+## 4.25 (Table of Decimal, Binary, Octal and Hexadecimal Equivalents)
+
+Write a program that prints a table of the binary,
+octal and hexadecimal equivalents of the decimal numbers 1—256.
+If you’re not familiar with these number systems, read online
+Appendix E before you attempt this exercise.
+[*Note:* You can display an integer as an octal or hexadecimal value
+with the conversion specifications %o and %X, respectively.]
