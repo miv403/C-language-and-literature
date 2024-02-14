@@ -551,3 +551,226 @@ switch, prompt the user to enter the appropriate facts your program needs to cal
 
 [*Note:* You can input values of
 type `double` using the conversion specification `%lf` with `scanf`.]
+
+## 4.29 (De Morgan’s Laws)
+
+We discussed the logical operators `&&`, `||`, and `!`. De Morgan’s Laws
+help express logical expressions more conveniently.
+These laws state that the expression `!(condition1 && condition2)`
+is logically equivalent tothe expression `(!condition1 || !condition2)`.
+Also, the expression `!(condition1 || condition2)` is
+logically equivalent to the expression `(!condition1 && !condition2)`.
+Use De Morgan’s Laws to write equivalent expressions for each of
+the following, and then write a program to show that both the original
+expression and the new expression in each case are equivalent.
+
+1. `!(x < 5) && !(y >= 7)`
+
+    ```C
+    int statement0 = !(x < 5) && !(y >= 7);
+    int statement1 = !((x < 5) || (y >= 7));
+
+    if (statement0 == statement1) {printf("OK ✓\n");}
+    ```
+
+2. `!(a == b) || !(g != 5)`
+
+    ```C
+    int statement0 = !(a == b) || !(g != 5);
+    int statement1 = !((a == b) && (g != 5));
+
+    if (statement0 == statement1) {printf("OK ✓\n");}
+    ```
+
+3. `!((x <= 8) && (y > 4))`
+
+    ```C
+    int statement0 = !((x <= 8) && (y > 4));
+    int statement1 = !(x <= 8) || (y < 4);
+
+    if (statement0 == statement1) {printf("OK ✓\n");}
+    ```
+
+4. `!((i > 4) || (j <= 6))`
+
+    ```C
+    int statement0 = !((i > 4) || (j <= 6));
+    int statement1 = !(i > 4) && !(j <= 6);
+
+    if (statement0 == statement1) {printf("OK ✓\n");}
+    ```
+
+## 4.30 (Replacing switch with if…else)
+
+Rewrite Fig. 4.5 by replacing the switch with
+a nested if…else statement. Be careful to deal with the default case properly.
+Next, rewrite this new version by replacing the nested if…else statement with a
+series of if statements. Here, too, be careful to deal with the default case
+properly. This exercise demonstrates that switch is a convenience and that any
+switch statement can be written with only single-selection statements.
+
+## 4.31 (Diamond-Printing Program)
+
+Write a program that prints the following diamond shape. Your printf statements
+may print either one asterisk (*) or one blank. Use nested for statements and
+minimize the number of printf statements.
+
+```text
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+```
+
+## 4.32 (Modified Diamond-Printing Program)
+
+Modify the program you wrote in Exercise 4.31 to read an odd number in the range 1
+to 19 to specify the number of rows in the diamond. Your program should then
+display a diamond of the appropriate size.
+
+## 4.33 (Roman-Numeral Equivalent of Decimal Values)
+
+Write a program that prints a table of the Roman-numeral equivalents for the
+decimal numbers in the range 1 to 100.
+
+## 4.34
+
+Describe how you’d replace a `do…while` loop with an equivalent `while`.
+What problem occurs when you try to replace a `while` loop with an equivalent
+`do…while` loop? Suppose you’ve been told that you must remove a `while` loop and
+replace it with a `do…while`. What additional control statement would you need to
+use? How would you use it to ensure that the resulting program behaves exactly
+like the original?
+
+```C
+// 1 2 3 4 5
+unsigned int N = 1;
+do {
+  printf("%u", N);
+  ++N;
+}while (N <= 5);
+puts("");
+puts("");
+
+while(N <= 5) {
+  printf("%u", N);
+  ++N;
+}
+puts("");
+puts("");
+```
+
+## 4.35
+
+A criticism of the break and continue statements is that each is unstructured.
+Actually, break and continue statements can always be replaced by structured
+statements, though doing so can be awkward. Describe how you’d remove any break
+statement from a loop and replace that statement with some structured equivalent.
+[Hint: The break statement terminates a loop from the loop body. The other way to
+leave is by failing the loop-continuation test. Consider using in the
+loop-continuation test a second test that indicates “early exit because of a
+‘break’ condition.”] Use the technique you developed here to remove the break
+statement from the program of Fig. 4.7.
+
+## 4.36 What does the following program segment do?
+
+```C
+for (int i = 1; i <= 5; ++i) {
+  for (int j = 1; j <= 3; ++j) {
+    for (int k = 1; k <= 4; ++k) {
+      printf("%s", "*");
+    }
+    puts("");
+  }
+  puts("");
+}
+```
+
+- **my answer**:
+
+  prints following output
+
+  ```console
+  $ ./a.out
+  ****
+  ****
+  ****
+
+  ****
+  ****
+  ****
+
+  ****
+  ****
+  ****
+
+  ****
+  ****
+  ****
+
+  ****
+  ****
+  ****
+
+  ```
+
+## 4.37
+
+Describe in general how you would remove any continue statement from a
+loop in a program and replace that statement with some structured equivalent. Use
+the technique you developed here to remove the continue statement from the pro-
+gram of Fig. 4.8.
+
+- **my answer**:
+
+  ```C
+  #include <stdio.h>
+
+  int main(void) {
+      
+    for (int x = 1; x <= 10; ++x) {
+
+      if (x != 5) {
+        printf("%d ", x);
+      }
+    }
+  }
+  ```
+
+## 4.38 (“The Twelve Days of Christmas” Song)
+
+Write a program that uses iteration and switch statements to print the song “The
+Twelve Days of Christmas.” One switch statement should be used to print the day
+(i.e., “first,” “second,” etc.). A separate switch statement should be used to
+print the remainder of each verse.
+
+## 4.39 (Limitations of Floating-Point Numbers for Monetary Amounts)
+
+Section 4.5 cautioned about using floating-point values for monetary calculations.
+Try this experiment: Create a `float` variable with the value `1000000.00`.
+Next, add to that variable the literal `float` value `0.12f`. Display the result using
+`printf` and the conversion specification "`%.2f`". What do you get?
+
+## 4.40 (World Population Growth)
+
+World population has grown considerably over the centuries. Continued growth could
+eventually challenge the limits of breathable air, drinkable water, arable
+cropland and other limited resources. There’s evidence that growth has been
+slowing in recent years and that world population could peak sometime this
+century, then start to decline.
+For this exercise, research world population growth issues online. Be sure to
+investigate various viewpoints. Get estimates for the current world population and
+its growth rate (the percentage by which it’s likely to increase this year). Write
+a program that calculates world population growth each year for the next 75 years,
+using the simplifying assumption that the current growth rate will stay constant.
+Print the results in a table. The first column should display the year from year 1
+to year 75. The second column should display the anticipated world population at
+the end of that year. The third column should display the numerical increase in
+the world population that would occur that year. Using your results, determine the
+year in which the population would be double what it is today if this year’s
+growth rate were to persist.
