@@ -21,7 +21,8 @@ int main(void) {
         puts("");
 
     }
-    printf("largest number is %u", largest);
+    printf("the largest number is %u", largest);
     puts("");
+
 
 }
