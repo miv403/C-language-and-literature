@@ -12,6 +12,7 @@ rolling a 7 before making the point.
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 int roll(void);
 void diceFace(int roll);
@@ -23,14 +24,17 @@ int main(void) {
     int counter = 0;
     int sum = 0;
     int point = 0;
+
+    printf("roll a dice: ");
+    int empt;
+    scanf("%d", &empt);
+
     while(1) {
 
         counter++;
         //roll two dice:
 
-        printf("roll a dice: ");
-        int empt;
-        scanf("%d", &empt);
+
         
         /* 
         player win:
@@ -43,42 +47,59 @@ int main(void) {
             (4) ii. if sum 7 before making the point
         */
 
-        for(int i = 0; i < 2; ++i) {
-            int roll1 = roll();
-            sum += roll1;
-            diceFace(roll1);
-        }
-        int point = sumCheck(sum);
+        sum = 0;
+
+        srand(time(NULL));
+        int roll1 = roll();
+        diceFace(roll1);
+
+        sleep(3);
+        srand(time(NULL));
+        int roll2 = roll();
+        diceFace(roll2);
+        sum = roll1 + roll2;
         
+        
+
         if (counter == 1) {
 
+            point = sumCheck(sum);
+
             if (point == 1) {
-                printf("YOU WIN on first throw!(1)\n");
+                printf("\nYOU WIN on first throw!(1)\n");
                 break;
             } else if (point == 2 ){
-                printf("CRAPS!\n YOU LOSE.(3)");
+                printf("\nCRAPS!\nYOU LOSE.(3)\n");
                 break;
             } 
-            sum = 0;
+            printf("\nsum: %d point: %d\n", sum, point);
+        
+        } else { 
+
+            printf("\nsum: %d point: %d\n", sum, point);
+
+            if (sum == 7){
+                printf("\nYOU LOSE.(4)\n");
+                break;
+            } else if (sum >= point) {
+                printf("\nYOU WIN!(2)\n");
+                break;
+            }
+            
         }
 
-        if (sum >= point) {
-            printf("YOU WIN!(2)\n");
-            break;
-        }
-        else if (sum == 7){
-            printf("YOU LOSE.(4)\n");
-            break;
-        }
-
-    }
         /* end of while loop */
-        printf("roll a dice [Y/N] sum: %d point: %d: ", sum, point);
+        printf("\nroll a dice: \n");
+        int empt;
+        scanf("%d", &empt);
+    }
+
+    puts("");
 }
 
 int roll(void) {
     
-    srand(time(NULL));
+    
     return 1 + (rand() % 6);
 
 }
