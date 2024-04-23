@@ -109,6 +109,29 @@ rules.
 | `<setjmp.h>`                            | Contains function prototypes for functions that allow bypassing of the usual function call and return sequence.                                                                                                                                                                                                         |
 | `<stddef.h>`                            | Contains common type definitions used by C.                                                                                                                                                                                                                                                                             |
 
+## psudorandom number generator
+
+### rand() function
+
+`rand()` function is located in `stdlib.h` header.
+this function is not secure. the return values of
+the function are predictable.
+`rand()` has a range of 0 to `RAND_MAX`. this upper
+limit may differ between compilers.
+
+the program 3.2 is printing same values each time.
+
+```C
+
+    // WE CAN USE THE UNIX TIME AS A SEED
+
+//*******************************************//
+    int seed = time(NULL);
+//*******************************************//
+    srand(seed); // seed the random-number generator
+
+```
+
 <!-- markdownlint-configure-file {
   "no-inline-html": {
     "allowed_elements": [
