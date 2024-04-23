@@ -25,7 +25,7 @@ int main(void) {
     int sum = 0;
     int point = 0;
 
-    printf("roll a dice: ");
+    printf("type in a number for roll a dice: ");
     int empt;
     scanf("%d", &empt);
 
@@ -81,17 +81,17 @@ int main(void) {
             if (sum == 7){
                 printf("\nYOU LOSE.(4)\n");
                 break;
-            } else if (sum >= point) {
+            } else if (sum == point) {
                 printf("\nYOU WIN!(2)\n");
                 break;
             }
-            
         }
 
         /* end of while loop */
-        printf("\nroll a dice: \n");
+        printf("\ntype in a number for roll a dice: ");
         int empt;
         scanf("%d", &empt);
+        puts("");
     }
 
     puts("");
@@ -109,7 +109,7 @@ int sumCheck(int sum) {
     // checks sum and game counter
     // then decides WIN or LOSE
     // first throw WIN returns 1
-    // first throw LOSE returns 2
+    // first throw CRAPS returns 2
 
     switch (sum){
     case 7:
@@ -181,30 +181,4 @@ void diceFace(int roll) {
         printf("hata????\n");
         break;
     }
-    
 }
-
-/*
-        printf("...\n.*.\n...\n"); // 1
-        printf("..*\n...\n*..\n"); // 2
-        printf("..*\n.*.\n*..\n"); // 3
-        printf("*.*\n...\n*.*\n"); // 4
-        printf("*.*\n.*.\n*.*\n"); // 5
-        printf("*.*\n*.*\n*.*\n"); // 6
-
-        printf("... .*. ... ");   // 1
-        printf("..* ... *.. ");   // 2
-        printf("..* .*. *.. ");   // 3
-        printf("*.* ... *.* ");   // 4
-        printf("*.* .*. *.* ");   // 5
-        printf("*.* *.* *.* ");   // 6
-
-        printf(".....   \n")
-        printf("..*..   \n")
-        printf(".....   \n")
-
-        printf("...   ..*\n")
-        printf(".*.   ...\n")
-        printf("...   *..\n")
-
-*/
