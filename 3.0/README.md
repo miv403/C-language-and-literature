@@ -132,10 +132,63 @@ the program 3.2 is printing same values each time.
 
 ```
 
-<!-- markdownlint-configure-file {
+### enumeration
+
+```C
+enum Status {CONTINUE, LOST, WON};
+//              0    ,  1  ,  2
+
+enum Status gameStatus = CONTINUE; // may be CONTINUE, WON, or LOST
+// then could be changed with depending status:
+gameStatus = WON;
+gameStatus = LOST;
+
+```
+
+## storage classes
+
+**storage class:** determines an identifier’s *storage duration*, *scope* and *linkage*.
+
+**storage duration:** is the period during which an identifier exists in memory. Some exist briefly,
+some are repeatedly created and destroyed, and others exist for the entire program execution.
+
+**scope:** determines where a program can reference an identifier. Some can be ref-
+erenced throughout a program, others from only portions of a program.
+
+**linkage:** For a multiplesource-file program, an identifier’s *linkage* determines whether the identifier is known
+only in the current source file or in any source file with proper declarations.
+
+### storage duration
+
+The `auto` keyword declares that a variable has automatic storage
+duration. Such variables are created when program control enters the
+block in which they’re defined. They exist while the block is active, and
+they’re destroyed when program control exits the block.
+
+Only variables can have automatic storage duration. A function’s local
+variables—those declared in the parameter list or function body—have automatic storage duration by default, so the auto keyword is rarely
+used. Automatic storage duration is a means of conserving memory because local variables exist only when they’re needed. We’ll refer to variables
+with automatic storage duration simply as local variables.
+
+#### Static Storage Class
+
+Keywords `extern` and `static` declare identifiers for variables and
+functions with *static storage duration*. Identifiers of static storage
+duration exist from the time at which the program begins execution
+<u>until it terminates.</u>
+
+For `static` variables, storage is allocated
+and initialized *only once*, *before the program begins execution*. For
+functions, the name of the function exists when the program begins
+execution. However, even though these names exist from the start of
+program execution, they are not always accessible. Storage duration and
+scope (where a name can be used) are separate issues.
+
+<!-- markdownlint-configure-file { 
   "no-inline-html": {
     "allowed_elements": [
-      "br",
+  "u",
+  "br",
     ]
   }
 } -->

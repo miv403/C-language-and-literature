@@ -9,6 +9,10 @@ continue rolling the dice until you “make your point.” The player loses by
 rolling a 7 before making the point.
 */
 
+// TODO:
+//      [ ] switch-case kısaltılabilir
+//      [ ] enum kullanımı
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -34,8 +38,6 @@ int main(void) {
         counter++;
         //roll two dice:
 
-
-        
         /* 
         player win:
             (1) i.  first throw: sum = 7 or 11
