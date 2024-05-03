@@ -109,6 +109,8 @@ rules.
 | `<setjmp.h>`                            | Contains function prototypes for functions that allow bypassing of the usual function call and return sequence.                                                                                                                                                                                                         |
 | `<stddef.h>`                            | Contains common type definitions used by C.                                                                                                                                                                                                                                                                             |
 
+for more `<math.h>` see *page 182.*
+
 ## psudorandom number generator
 
 ### rand() function
@@ -152,8 +154,7 @@ gameStatus = LOST;
 **storage duration:** is the period during which an identifier exists in memory. Some exist briefly,
 some are repeatedly created and destroyed, and others exist for the entire program execution.
 
-**scope:** determines where a program can reference an identifier. Some can be ref-
-erenced throughout a program, others from only portions of a program.
+**scope:** determines where a program can reference an identifier. Some can be referenced throughout a program, others from only portions of a program.
 
 **linkage:** For a multiplesource-file program, an identifier’s *linkage* determines whether the identifier is known
 only in the current source file or in any source file with proper declarations.
@@ -178,11 +179,31 @@ duration exist from the time at which the program begins execution
 <u>until it terminates.</u>
 
 For `static` variables, storage is allocated
-and initialized *only once*, *before the program begins execution*. For
+and <u>**initialized only once**</u>, *before the program begins execution*. For
 functions, the name of the function exists when the program begins
 execution. However, even though these names exist from the start of
 program execution, they are not always accessible. Storage duration and
 scope (where a name can be used) are separate issues.
+
+see *page 208*
+
+more info [see](https://en.cppreference.com/w/c/language/storage_duration)
+
+```C
+static int count = 1; // this is a local variable
+```
+
+> [!NOTE] info
+>All numeric variables of static storage duration are initialized to zero by default if you do not explicitly initialize them.
+
+### scoping
+
+if a variable initialized out of the main function it will be a **global variable**.
+
+any variable in a function (include `main`) will be a **local variable** for that function.
+local variables initializes every time when function called unless the variable is a `static`.
+
+the variable will be a *global variable* unless it initialized as a *local variable*. (of course this is valid when the *local* and *global variables* have same name)
 
 <!-- markdownlint-configure-file { 
   "no-inline-html": {
