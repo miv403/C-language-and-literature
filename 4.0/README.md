@@ -44,7 +44,6 @@ Element   Value
       2       0
       3       0
       4       0
-
 ```
 
 **size_t:** recommended type for any variable representing an array's size.
@@ -57,7 +56,7 @@ more about [*size_t*](https://en.cppreference.com/w/c/types/size_t)
 ### other types of initializing
 
 ```C
-int n[5] = {0}; // initializes entire array with zeros.
+int n[5] = {0}; // initializes entire array with zeros. [*]
 
 int n[3] = {32, 27, 64, 18}; // COMPILATION ERROR ✕
 //    ^n   |-----  k -----|     n < k
@@ -65,26 +64,43 @@ int n[3] = {32, 27, 64, 18}; // COMPILATION ERROR ✕
 int n[] = {1, 2, 3, 4, 5}; // five-element int array
 
 // compiler can calculate the size of array.
-
 ```
+
+actually the compiler initializes n[0] with 0 in
+this statement it could be like this:
+
+```C
+int n[5] = {1,2}
+// n will be like this:
+// {1, 2, 0, 0, 0}
+```
+
+> If there are fewer initializers than array
+> elements, **the remaining elements** are initialized to 0.
 
 ### symbolic constant with `#define`
 
-a constant be used in `4.1.1`.
+a *symbolic constant* can be used like this and like in `4.1.1`:
 
 ```C
 #define SOME_THING 31
 //                  ^ DO NOT USE `;`
-```
 
-> if you use semicolon after 31 the compiler replace all `SOME_THING` occurrences with `31;` which means program could fcked up.
-> don't make that mistake if you don't want apply to [ioccc](https://www.ioccc.org/)
-
-a *symbolic constant* can be used like this:
-
-```C
 #define SIZE 5
 
 int n[SIZE] = {0}; //
 
 ```
+
+> if you use semicolon after 31 the compiler replace all `SOME_THING` occurrences with `31;` which means program could fcked up.
+> don't make that mistake if you don't want apply to [ioccc](https://www.ioccc.org/)
+
+## strings
+
+```C
+char string1[] = "birinci";
+
+// string1 = {'b','i','r','i','n','c','i','\0'}
+```
+
+there is eight `char` in this string-array. `\0` is *string-terminating* **null character**.
