@@ -124,14 +124,11 @@ limit may differ between compilers.
 the program 3.2 is printing same values each time.
 
 ```C
-
-    // WE CAN USE THE UNIX TIME AS A SEED
-
+// WE CAN USE THE UNIX TIME AS A SEED
 //*******************************************//
     int seed = time(NULL);
 //*******************************************//
     srand(seed); // seed the random-number generator
-
 ```
 
 ### enumeration
@@ -151,6 +148,8 @@ gameStatus = LOST;
 
 **storage class:** determines an identifier’s *storage duration*, *scope* and *linkage*.
 
+**storage-class specifiers:** `auto`, `extern`, `static`
+
 **storage duration:** is the period during which an identifier exists in memory. Some exist briefly,
 some are repeatedly created and destroyed, and others exist for the entire program execution.
 
@@ -166,15 +165,18 @@ duration. Such variables are created when program control enters the
 block in which they’re defined. They exist while the block is active, and
 they’re destroyed when program control exits the block.
 
-Only variables can have automatic storage duration. A function’s local
-variables—those declared in the parameter list or function body—have automatic storage duration by default, so the auto keyword is rarely
-used. Automatic storage duration is a means of conserving memory because local variables exist only when they’re needed. We’ll refer to variables
-with automatic storage duration simply as local variables.
+Only variables can have automatic storage duration. **A function’s local**
+variables—those declared in the parameter list or function body—**have automatic storage duration by default**, so the `auto` keyword is *rarely used*.
+Automatic storage duration is a means of conserving
+memory because local variables exist only when they’re
+needed. We’ll refer to variables
+with automatic storage duration simply as local
+variables.
 
 #### Static Storage Class
 
 Keywords `extern` and `static` declare identifiers for variables and
-functions with *static storage duration*. Identifiers of static storage
+functions with **static storage duration**. Identifiers of static storage
 duration exist from the time at which the program begins execution
 <u>until it terminates.</u>
 
@@ -190,20 +192,67 @@ see *page 208*
 more info [see](https://en.cppreference.com/w/c/language/storage_duration)
 
 ```C
-static int count = 1; // this is a local variable
+static int count = 1; // this will initialized only once
+                      // local variable
 ```
 
 > [!NOTE] info
 >All numeric variables of static storage duration are initialized to zero by default if you do not explicitly initialize them.
 
+```C
+static int number; // `number` will be zero.
+printf("%d",number);
+  // output: 0
+```
+
 ### scoping
 
-if a variable initialized out of the main function it will be a **global variable**.
+if a variable initialized **out of the `main` function** it will be a **global variable**.
 
 any variable in a function (include `main`) will be a **local variable** for that function.
 local variables initializes every time when function called unless the variable is a `static`.
 
-the variable will be a *global variable* unless it initialized as a *local variable*. (of course this is valid when the *local* and *global variables* have same name)
+~~the variable will be a *global variable* unless it initialized as a *local variable*. (of course this is valid when the *local* and *global variables* have same name)~~ not correct
+
+## recursion
+
+When called with a more complex problem, the function typically
+divides the problem into two conceptual pieces:
+
+- one that the function knows how to do, and
+- one that it does not know how to do.
+
+**base case:** simplest problem function actually know
+
+the **recursion calls** (or *recursion steps*) should converge to base case each call.
+
+### factorial
+
+```C
+unsigned long long int factorial(int number) {
+  if (number <= 1) { // base case
+    return 1;
+  }
+  else {             // recursive step
+    return (number * factorial(number - 1));
+  }
+}
+```
+
+### fibonacci series
+
+this function returns *nth* fibonacci number.
+
+```C
+unsigned long long int fibonacci(int n) {
+  if (0 == n || 1 == n) { // base case
+    return n;
+  }
+  else {                  // recursive step
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+}
+```
 
 <!-- markdownlint-configure-file { 
   "no-inline-html": {
