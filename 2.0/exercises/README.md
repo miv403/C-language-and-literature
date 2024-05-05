@@ -20,9 +20,10 @@ tags:
   - my answer:
 
     ```C
-    for (x = 100, x >= 1, --x) {
-    ^ wrong syntax        ^^ infinite loop
-
+    for (x = 100, x >= 1, --x) {/*
+    ^ wrong     ^       ^ ^^ infinite loop
+      syntax    should be 
+                semicolon       */
     ```
 
 - **b.** The following code should print whether a given integer is odd or even:
