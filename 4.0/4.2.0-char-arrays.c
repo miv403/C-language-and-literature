@@ -14,7 +14,7 @@ int main(void)
     printf("string1 is: %s\nstring2 is: %s\n", string1, string2);
     puts("string1 with spaces between characters is:");
     // output characters until null character is reached
-    for (size_t i = 0; i < SIZE && string1[i] != '\0'; ++i)
+    for (size_t i = 0; i < SIZE && string1[i] != ' '; ++i)
     {
         printf("%c ", string1[i]);
     }

@@ -15,7 +15,7 @@ int main(void) {
         ++freq[face];
     }
     printf("%s\t%-10s\n", "Face", "Frequency");
-    for(size_t i = 1; i <= SIZE; ++i) {
+    for(size_t i = 1; i < SIZE; ++i) {
 
         printf("%4zu\t%10d\n", i, freq[i]);
     }
