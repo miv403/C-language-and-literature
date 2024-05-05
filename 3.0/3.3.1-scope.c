@@ -52,3 +52,23 @@ void useGlobal(void)
     x *= 10;
     printf("global x is %d on exiting useGlobal\n", x);
 }
+
+/* $output
+
+local x in outer scope of main is 5
+local x in inner scope of main is 7
+local x in outer scope of main is 5
+local x in useLocal is 25 after entering useLocal
+local x in useLocal is 26 before exiting useLocal
+local static x is 50 on entering useStaticLocal
+local static x is 51 on exiting useStaticLocal
+global x is 1 on entering useGlobal
+global x is 10 on exiting useGlobal
+local x in useLocal is 25 after entering useLocal
+local x in useLocal is 26 before exiting useLocal
+local static x is 51 on entering useStaticLocal
+local static x is 52 on exiting useStaticLocal
+global x is 10 on entering useGlobal
+global x is 100 on exiting useGlobal
+local x in main is 5
+*/
