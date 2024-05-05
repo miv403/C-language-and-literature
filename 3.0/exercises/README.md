@@ -1,5 +1,55 @@
 # exercises
 
+## 5.1
+
+1. functions
+2. function call
+3. local variable
+4. return
+5. void
+6. scope
+7. return
+8. prototype
+9. rand()
+10. srand()
+11. auto, register, extern, static
+12. auto
+13. global
+14. static
+15. file, block, function, function-prototype
+16. recursive
+17. base
+
+## 5.2 Consider the following program
+
+```C
+#include <stdio.h>
+int cube(int y);
+int main(void) {
+    for (int x = 1; x <= 10; ++x) {
+        printf("%d\n", cube(x));
+    }
+}
+int cube(int y) {
+    return y * y * y;
+}
+```
+
+State the scope (function scope, file scope, block scope or function-prototype scope)
+of each of the following elements:
+
+**a.** The variable x in main. // block scope
+
+**b.** The variable y in cube. // block scope
+
+**c.** The function cube. // file scope
+
+**d.** The function main. // file scope
+
+**e.** The function prototype for cube. // file scope
+
+**f.** The identifier y in the function prototype for cube. // function-prototype scope
+
 ## 5.8 math functions
 
 Show the value of x after each of the following statements is performed:
