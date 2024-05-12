@@ -1,0 +1,11 @@
+*.out
+.vscode/
+other/
+*.txt
+*.csv
+DENEME.*
+deneme.*
+DENEME??.*
+DENEME?.*
+deneme??.*
+deneme?.*
