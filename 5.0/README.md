@@ -128,3 +128,31 @@ void bubbleSort(int * const array, size_t size);
 // equivalent of
 void bubbleSort(int array[], size_t size);
 ```
+
+## Demonstrating Pointer Subscripting and Offsets
+
+```text
+Array b printed with:
+Array subscript notation
+b[0] = 10
+b[1] = 20
+b[2] = 30
+b[3] = 40
+
+Pointer/offset notation where the pointer is the array name
+*(b + 0) = 10
+*(b + 1) = 20
+*(b + 2) = 30
+*(b + 3) = 40
+
+Pointer subscript notation
+bPtr[0] = 10
+bPtr[1] = 20
+bPtr[2] = 30
+bPtr[3] = 40
+Pointer/offset notation
+*(bPtr + 0) = 10
+*(bPtr + 1) = 20
+*(bPtr + 2) = 30
+*(bPtr + 3) = 40
+```
